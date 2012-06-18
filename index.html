@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="webfont.css">
+<style>
+@font-face {
+    font-family: 'BlankRegular';
+    src: url('blank.eot');
+    src: url('blank.eot?#iefix') format('embedded-opentype'),
+         url('blank.woff') format('woff'),
+         url('blank.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 1.5em 2em;
+}
+ul {
+    list-style-type: square;
+    padding: 0 0 0 0.5em;
+}
+ul.responsive-detection li {
+    display: none;
+}
+ul.responsive-detection li.no-support,
+ul.responsive-detection li.landscape,
+ul.responsive-detection li.webfonts {
+    display: list-item;
+}
+ul.responsive-detection li.false {
+    color: red;
+}
+@media all and (min-width: 0) {
+    ul.responsive-detection li.no-support {
+        display: none;
+    }
+    ul.responsive-detection li.support {
+        display: list-item;
+    }
+    ul.responsive-detection li.small {
+        display: list-item;
+    }
+}
+@media all and (min-width: 600px) {
+    body {
+        font-size: 24px;
+    }
+    ul.responsive-detection li.small {
+        display: none;
+    }
+    ul.responsive-detection li.large {
+        display: list-item;
+    }
+}
+
+@media all and (orientation: portrait) {
+    ul.responsive-detection li.landscape {
+        display: none;
+    }
+    ul.responsive-detection li.portrait {
+        display: list-item;
+    }
+}
+@media tv,projection {
+    ul.responsive-detection li.television {
+        display: list-item;
+    }
+}
+@media print {
+    ul.responsive-detection li.print {
+        display: list-item;
+    }
+}
+ul.responsive-detection li.webfonts .webfont-test {
+    font-family: Blank;
+}
+</style>
+<!--[if (lt IE 9)&(!IEMobile)]>
+        <style>
+            body {
+                font-size: 24px;
+            }
+            ul.responsive-detection li.small-screen {
+                display: none;
+            }
+            ul.responsive-detection li.large-screen {
+                display: list-item
+            }
+        </style>
+<![endif]-->
+<title>ING Responsive Test</title>
+</head>
+<body>
+<ul class="responsive-detection">
+    <li class="no-support false">I don&rsquo;t support media queries</li>
+    <li class="support">I support media queries</li>
+    <li class="small">I&rsquo;m a small screen device</li>
+    <li class="large">I&rsquo;m a large screen device</li>
+    <li class="portrait">I&rsquo;m in portrait mode</li>
+    <li class="landscape">I&rsquo;m in landscape mode</li>
+    <li class="television">I&rsquo;m a television</li>    
+    <li class="print">I&rsquo;m printed</li>
+    <li class="webfonts">I <span class="webfont-test">don't </span>support webfonts</li>
+</ul><!-- /.responsive-detection -->
+</body>
+</html>
